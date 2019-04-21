@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>logarr</Name>
+  <Repository>monitorr/logarr</Repository>
+  <Registry>https://hub.docker.com/r/monitorr/logarr/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/monitorr/logarr/</Support>
+  <Project/>
+  <Overview>Self-hosted, single-page, log consolidation tool written in PHP   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Repooc/unraid-stuff/master/docker-icons/logarr.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1555861358</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Self-hosted, single-page, log consolidation tool written in PHP   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8383</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/logarr/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/plexpass/Plex Media Server/Logs/</HostDir>
+      <ContainerDir>/logs_plex</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/sonarr/logs/</HostDir>
+      <ContainerDir>/logs_sonarr</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/radarr/logs/</HostDir>
+      <ContainerDir>/logs_radarr</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>000</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Port" Target="80" Default="8383" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8383</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/cache/appdata/logarr/" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/logarr/</Config>
+  <Config Name="Plex Logs" Target="/logs_plex" Default="" Mode="ro" Description="Container Path: /logs_plex" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/plexpass/Plex Media Server/Logs/</Config>
+  <Config Name="Sonarr Logs" Target="/logs_sonarr" Default="/mnt/cache/appdata/sonarr/logs/" Mode="ro" Description="Container Path: /logs_sonarr" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/sonarr/logs/</Config>
+  <Config Name="Radarr Logs" Target="/logs_radarr" Default="/mnt/cache/appdata/radarr/logs/" Mode="ro" Description="Container Path: /logs_radarr" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/radarr/logs/</Config>
+  <Config Name="UMASK" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+</Container>
